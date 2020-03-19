@@ -1,3 +1,7 @@
 from django.db import models
+from django.contrib.auth.models import AbstractBaseUser
+from django.contrib.auth.models import PermissionMixin
 
-# Create your models here.
+
+class UserProfile(AbstractBaseUser, PermissionMixin):
+    email = models.EmailField()
